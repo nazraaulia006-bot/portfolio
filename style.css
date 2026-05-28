@@ -1,0 +1,475 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #2c1f15; /* Dasar web Espresso Gelap */
+    color: #f5f1e8;
+    overflow-x: hidden;
+}
+
+/* NAVBAR (Tetap Warna Krem Terang - Tidak Berubah) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 241, 232, 0.95); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 20px 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(139, 111, 71, 0.1);
+}
+
+.logo {
+    color: #2c1f15; /* Nama Nazra Aulia tetap gelap di nav krem */
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+nav div a {
+    color: #2c1f15; /* Menu tetap espresso di nav krem */
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+nav div a:hover {
+    background: rgba(139, 111, 71, 0.1);
+    color: #8b6f47;
+}
+
+/* 1. HOME SECTION (DIUBAH JADI ESPRESSO GELAP LUAR BIASA MEWAH) */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 10%;
+    min-height: 85vh;
+    gap: 60px; 
+    background: #2c1f15; /* Latar belakang menjadi Espresso Gelap */
+}
+
+/* PEMICU ANIMASI JAVASCRIPT */
+.home-text {
+    width: 55%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.home-img {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+}
+
+.home-text.show, .home-img.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* WARNA TULISAN DI DALAM HOME (BIAR NAMPAK JELAS & CANTIK) */
+.subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ddb892; /* Emas latte hangat agar menyala */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.typing-text {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #f5f1e8; /* Tulisan "Selamat Datang" jadi Putih Krem terang agar kontras */
+    min-height: 110px; 
+}
+
+.desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ccc; /* Abu-abu cerah agar nyaman dibaca di layar gelap */
+    text-align: justify;
+    margin-bottom: 35px;
+}
+
+/* TOMBOL DI AREA HOME */
+.home-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ddb892, #b08968); /* Tombol utama warna emas latte cerah */
+    color: #2c1f15; /* Teks di dalam tombol cokelat gelap */
+    border: none;
+    box-shadow: 0 4px 15px rgba(221, 184, 146, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(221, 184, 146, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ddb892; /* Garis tepi emas latte */
+    border: 2px solid #ddb892;
+}
+
+.btn-secondary:hover {
+    background: #ddb892;
+    color: #2c1f15;
+    transform: translateY(-3px);
+}
+
+/* IMAGE FRAME GLOW EFFECT */
+.img-frame {
+    position: relative;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.img-frame::before {
+    content: "";
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, #ddb892, transparent, #7f5539);
+    border-radius: 34px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.home-img img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+}
+
+/* 2. ABOUT SECTION (TEMA GELAP MEWAH) */
+#about {
+    padding: 120px 60px;
+    background: #2c1f15; 
+}
+
+.about-title {
+    text-align: center;
+    font-size: 45px;
+    color: #f5f1e8; 
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.about-title::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    background: #ddb892;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 85%;
+    margin: auto;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 30px;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 5px solid #ddb892;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 20px 45px rgba(221, 184, 146, 0.15);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.about-card h3 {
+    color: #ddb892; 
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.about-card p {
+    color: #ccc; 
+    line-height: 1.8;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* 3. PORTFOLIO SECTION (TETAP GELAP MEWAH) */
+#portfolio {
+    padding: 120px 50px;
+    background: #2c1f15; 
+}
+
+.portfolio-title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+    color: #f5f1e8; 
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.portfolio-title::after {
+    content: "";
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(to right, #ddb892, #b08968);
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 20px;
+}
+
+.portfolio-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-bottom: 50px;
+}
+
+.portfolio-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 5px solid #ddb892;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(221, 184, 146, 0.15);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 22px;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: 0.4s;
+}
+
+.portfolio-card h3 {
+    font-size: 24px;
+    color: #ddb892; 
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.portfolio-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ccc; 
+    text-align: center;
+}
+
+.portfolio-card button {
+    margin-top: 20px;
+    background: linear-gradient(to right, #ddb892, #b08968);
+    color: #2c1f15;
+    border: none;
+    box-shadow: 0 8px 20px rgba(221, 184, 146, 0.2);
+}
+
+/* GALLERY FOTO KEGIATAN (EFEK GLOW DAN HOVER KARTU SEPERTI SERTIFIKAT) */
+.gallery-title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    color: #f5f1e8;
+    letter-spacing: 2px;
+}
+
+.gallery-title::after {
+    content: "";
+    width: 140px;
+    height: 6px;
+    background: linear-gradient(to right, #ddb892, #7f5539);
+    display: block;
+    margin: 18px auto 0;
+    border-radius: 50px;
+}
+
+.gallery-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Kartu Galeri dibuat Glassmorphism dengan border-top menyala emas */
+.gallery-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-top: 5px solid #ddb892; /* Border emas menyala seperti sertifikat */
+    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efek saat kursor menyentuh foto kegiatan (Hover Effect) */
+.gallery-card:hover {
+    transform: translateY(-12px) scale(1.03); /* Kartu naik dan membesar halus */
+    box-shadow: 0 20px 45px rgba(221, 184, 146, 0.2); /* Cahaya glow emas melebar */
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.4s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.02); /* Fotonya ikut membesar sedikit di dalam bingkai */
+}
+
+/* 4. CONTACT SECTION (GELAP KONSISTEN) */
+#contact {
+    padding: 120px 10%;
+    background: #2c1f15; 
+}
+
+.contact-container {
+    max-width: 580px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.04); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-container h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #ddb892; 
+    margin-bottom: 40px;
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container label {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ddb892;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff; 
+    outline: none;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    border-color: #ddb892;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-container button {
+    background: linear-gradient(45deg, #8b6f47, #ddb892);
+    color: #2c1f15;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIVE DESIGN FOR SMARTPHONES */
+@media (max-width: 992px) {
+    nav { padding: 20px 40px; }
+    nav div { margin-top: 10px; }
+    nav div a { margin-left: 10px; font-size: 14px; padding: 6px 12px; }
+    .home { flex-direction: column-reverse; gap: 40px; text-align: center; padding: 40px 20px; }
+    .home-text, .home-img { width: 100%; }
+    .typing-text { font-size: 36px; min-height: auto; }
+    .desc { text-align: center; }
+    .home-buttons { justify-content: center; }
+}
